@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %}
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Login</title>
+
+</head>
+
+{% block content %}
+
+  {% if error %}
+    {{ error }}
+    <br />
+    <br />
+  {% endif %}
+
+
+  <body>
+
+  <h1> Login </h1>
+
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token  %}
+
+    <br />
+
+    Username:
+    <br />
+    <input type="text" name="username" />
+    <br />
+
+    Password:
+    <br />
+    <input type="password" name="password" />
+    <br />
+    <br />
+
+
+    <input class="btn btn-primary" type="submit" value="Login" />
+
+  </form>
+
+  </body>
+
+{% endblock %}
+
+</html>

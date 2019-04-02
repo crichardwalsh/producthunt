@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %}
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Sign Up</title>
+
+</head>
+
+{% block content %}
+
+  {% if error %}
+    {{ error }}
+    <br />
+    <br />
+  {% endif %}
+
+
+  <body>
+
+  <h1> Sign Up!</h1>
+
+  <form method="post" action="{% url 'sign_up' %}">
+    {% csrf_token  %}
+
+    <br />
+
+    Username:
+    <br />
+    <input type="text" name="username" />
+    <br />
+
+    Password:
+    <br />
+    <input type="password" name="password1" />
+    <br />
+
+    Confirm Password:
+    <br />
+    <input type="password" name="password2" />
+    <br />
+    <br />
+
+    <input class="btn btn-primary" type="submit" value="Sign Up!" />
+
+  </form>
+
+  </body>
+
+{% endblock %}
+
+</html>
